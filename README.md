@@ -25,5 +25,14 @@ These extra features should be implemented but are not needed to pass the exam.
 10. It should be possible to store / track completed workouts and show the history of past completed workouts.
 
 ## Steps
-- Make mobile version
+- [ ] Ask Gioele for extra resources
+- [ ] Make mobile version
 - 
+
+## Remember
+- Page needs to be interactive
+- Some form of choice before the exercise starts
+- Control via voice interface
+- Screen width needs to be set so phones can be rotated
+- Screen width for tablets needs to be included
+- Possible to remove exercises that require chairs/use of equipment
