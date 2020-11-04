@@ -30,7 +30,6 @@ These extra features should be implemented but are not needed to pass the exam.
 
 -   [ ] Ask Gioele for extra resources
 -   [ ] Make mobile version
--
 
 ## Remember
 
