@@ -33,31 +33,21 @@ These extra features should be implemented but are not needed to pass the exam.
 Francis
 •	24-year-old
 •	Blind
-•	Journalist
 •	Personal laptop (new), Firefox
 •	Old phone, voice interface
-•	Less walking, due to covid
-•	Interested in online workouts
 •	Not able to follow videos, due to loud music and instruction complexity 
 •	NO JUMPING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Egil
 •	82-year-old
-•	Finnmark
 •	 Fucked up hands
 •	iPad Air 2, which is frustrating 
 •	Working from time to time in his basement
 Guri
-•	Nasty accident
-•	Attending ergotherapy before covid
-•	Workout from home
 •	Not able to follow most of the exercises 
 •	NO JUMPING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 James
 •	36-year-old 
-•	Lives in London
-•	Rarely at home
-•	Travels a lot
+
 •	Limited baggage 
 •	Narrow, long phone, Sony Xperia1, pictures may extend beyond the screen space
-•	Active
 •	Squeezing training sessions into a busy schedule 
