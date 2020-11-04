@@ -25,6 +25,7 @@ These extra features should be implemented but are not needed to pass the exam.
 10. It should be possible to store / track completed workouts and show the history of past completed workouts.
 
 ## Steps
+<<<<<<< HEAD
 - [ ] Ask Gioele for extra resources
 - [ ] Make mobile version
 - 
@@ -36,3 +37,31 @@ These extra features should be implemented but are not needed to pass the exam.
 - Screen width needs to be set so phones can be rotated
 - Screen width for tablets needs to be included
 - Possible to remove exercises that require chairs/use of equipment
+=======
+- Make mobile version
+- 
+
+
+## Personas
+Francis
+•	24-year-old
+•	Blind
+•	Personal laptop (new), Firefox
+•	Old phone, voice interface
+•	Not able to follow videos, due to loud music and instruction complexity 
+•	NO JUMPING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Egil
+•	82-year-old
+•	 Fucked up hands
+•	iPad Air 2, which is frustrating 
+•	Working from time to time in his basement
+Guri
+•	Not able to follow most of the exercises 
+•	NO JUMPING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+James
+•	36-year-old 
+
+•	Limited baggage 
+•	Narrow, long phone, Sony Xperia1, pictures may extend beyond the screen space
+•	Squeezing training sessions into a busy schedule 
+>>>>>>> 081621d4135dad4f8631a363a115c50c26063e1e
