@@ -24,14 +24,57 @@
     <main>
         <section>
             <!-- Forklaring av hva som skjer på nettsiden -->
+            <!-- <img src="resources/workoutplan.jpg" alt="Image that shows all the exercises in the 7 minute workout plan."> -->
         </section>
 
-        <section>
-            <!-- Valg av type exercise -->
+        <section id="exercise-choices">
+            <!-- Valg av type exercise ++ -->
+            <h2>Customize your workout</h2>
+            <form>
+                <!-- Choose length of exercise -->
+                <fieldset>
+                    <legend>Choose the length of your workout</legend>
+                    <label for="minutes">Length of workout in minutes</label>
+                    <input type="number" id="minutes" value="7" max="60" min="3">
+                </fieldset>
+
+
+                <!-- Exclusion -->
+                <fieldset>
+                    <legend>Exclude certain exercises</legend>
+                    <!-- Exclude bodyparts -->
+                    <label for="bodypart-exclusion">Exclude a specific part of the body</label>
+                    <select name="bodypart-exclusion" id="bodypart-exclusion">
+                        <option value="none" selected>None</option>
+                        <option value="arms">Arms</option>
+                        <option value="legs">Legs</option>
+                        <option value="abdomen">Abdomen</option>
+                    </select>
+
+                    <!-- No jumping -->
+                    <label for="no-jump">No jumping</label>
+                    <input class="exclusion" type="checkbox" id="no-jump" name="checkbox" value="no-jump">
+
+                    <!-- No equipment -->
+                    <label for="no-equip">No use of any equipment</label>
+                    <input class="exclusion" type="checkbox" id="no-equip" name="checkbox" value="no-equip">
+                </fieldset>
+
+                <!-- Start workout -->
+                <input type="submit" value="Start workout" id="start-workout">
+            </form>
+
         </section>
 
         <section>
             <!-- Selve exercise-boksen -->
+            <div>
+                <!-- Foreløpig eksempel -->
+                <!-- <h2>Workout plan</h2>
+                <img src="resources/workoutplan.jpg" alt="Something something.."> -->
+
+                <!-- Jumping jacks: Jump to a position with your legs spead wide and hands going overhead, and then jump back to a position with the feet together and the arms at the sides. -->
+            </div>
         </section>
 
     </main>
@@ -39,6 +82,9 @@
     <footer>
 
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

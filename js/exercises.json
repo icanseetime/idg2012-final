@@ -6,8 +6,7 @@
         "time": "standard",
         "seconds": 30,
         "jumping": true,
-        "equipment": false,
-        "body-part": "All"
+        "equipment": false
     },
     "wall-sit": {
         "id": 2,
@@ -17,7 +16,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Legs"
+        "bodypart": "legs"
     },
     "push-ups": {
         "id": 3,
@@ -27,7 +26,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Arms"
+        "bodypart": "arms"
     },
     "crunch": {
         "id": 4,
@@ -37,7 +36,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Abdomen"
+        "bodypart": "abdomen"
     },
     "step-ups": {
         "id": 5,
@@ -47,7 +46,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": true,
-        "body-part": "Legs"
+        "bodypart": "legs"
     },
     "squat": {
         "id": 6,
@@ -57,7 +56,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Legs"
+        "bodypart": "legs"
     },
     "triceps-dip": {
         "id": 7,
@@ -67,7 +66,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": true,
-        "body-part": "Arms"
+        "bodypart": "arms"
     },
     "plank": {
         "id": 8,
@@ -76,8 +75,7 @@
         "time": "standard",
         "seconds": 30,
         "jumping": false,
-        "equipment": false,
-        "body-part": "All"
+        "equipment": false
     },
     "running": {
         "id": 9,
@@ -87,7 +85,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Legs"
+        "bodypart": "legs"
     },
     "lunge": {
         "id": 10,
@@ -97,7 +95,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Legs"
+        "bodypart": "legs"
     },
     "push-up-and-rotate": {
         "id": 11,
@@ -107,7 +105,7 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Arms"
+        "bodypart": "arms"
     },
     "side-plank": {
         "id": 12,
@@ -117,6 +115,6 @@
         "seconds": 30,
         "jumping": false,
         "equipment": false,
-        "body-part": "Arms"
+        "bodypart": "arms"
     }
 }
