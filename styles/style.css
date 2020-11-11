@@ -51,3 +51,9 @@ select {
 fieldset {
     margin-bottom: 15px;
 }
+
+/* Exercise section */
+#pause-button,
+#play-button {
+    display: none;
+}
