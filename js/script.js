@@ -17,9 +17,9 @@ fetch('js/exercises.json')
             let chosenExercises = []
             Object.values(data).forEach(exercise => {
                 // Exclude bodyparts, jumping & equipment if chosen
-                if (!(exclude['no-jump'] && exercise.jumping) 
-                && !(exclude['no-equip'] && exercise.equipment) 
-                && (exclude['bodypart'] != exercise.bodypart)) {
+                if (!(exclude['no-jump'] && exercise.jumping)
+                    && !(exclude['no-equip'] && exercise.equipment)
+                    && (exclude['bodypart'] != exercise.bodypart)) {
                     chosenExercises.push(exercise)
                 }
             })
@@ -38,6 +38,14 @@ fetch('js/exercises.json')
             pauseButton.style.display = 'inline-block'
             pauseButton.setAttribute('aria-hidden', 'false')
 
+            let timer = length
+            let etEllerAnnet = setInterval(function () {
+                if (timer >= 0) {
+                    document.getElementById('test-timer').innerHTML = timer
+                    timer--
+                }
+            }, 1000)
+
 
             // Displaying exercises on a timer
             let idx = 0
@@ -51,7 +59,7 @@ fetch('js/exercises.json')
                     document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
                     // exerciseSeconds--
                     let countdown = setInterval(function () {
-                            exerciseSeconds--
+                        exerciseSeconds--
                         if (exerciseSeconds >= 0) {
                             document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
                             console.log(idx, exerciseSeconds)

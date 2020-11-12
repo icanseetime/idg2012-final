@@ -28,8 +28,8 @@ These extra features should be implemented but are not needed to pass the exam.
 
 ## Steps
 
--   [x] Ask Gioele for extra resources
--   [ ] Make mobile version
+[x] Ask Gioele for extra resources
+[ ] Make mobile version
 
 ## Remember
 
