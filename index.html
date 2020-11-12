@@ -1,23 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>7-minute workout</title>
 </head>
+
 <body>
     <header>
-
-    </header>    
+        <h1>7-minute workout</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About this page</a></li>
+            <li><a href="#exercise-choices">Choose your workout</a></li>
+            <li><a href="#">View previous workouts</a></li>
+        </ul>
+    </nav>
 
     <main>
+        <section>
+            <!-- Forklaring av hva som skjer på nettsiden -->
+            <!-- <img src="resources/workoutplan.jpg" alt="Image that shows all the exercises in the 7 minute workout plan."> -->
+        </section>
+
+        <section id="exercise-choices">
+            <!-- Valg av type exercise ++ -->
+            <h2>Customize your workout</h2>
+            <form>
+                <!-- Choose length of exercise -->
+                <fieldset>
+                    <legend>Choose the length of your workout</legend>
+                    <label for="minutes">Length of workout in minutes</label>
+                    <!-- TODO: change value to 7 and min to 3, changed for testing purposes -->
+                    <input type="number" id="minutes" value="1" max="60" min="1">
+                </fieldset>
+
+
+                <!-- Exclusion -->
+                <fieldset>
+                    <legend>Exclude certain exercises</legend>
+                    <!-- Exclude bodyparts -->
+                    <label for="bodypart-exclusion">Exclude a specific part of the body</label>
+                    <select name="bodypart-exclusion" id="bodypart-exclusion">
+                        <option value="none" selected>None excluded</option>
+                        <option value="arms">No arms</option>
+                        <option value="legs">No legs</option>
+                        <option value="abdomen">No abdomen</option>
+                    </select>
+
+                    <!-- No jumping -->
+                    <label for="no-jump">No jumping</label>
+                    <input class="exclusion" type="checkbox" id="no-jump" name="checkbox" value="no-jump">
+
+                    <!-- No equipment -->
+                    <label for="no-equip">No use of any equipment</label>
+                    <input class="exclusion" type="checkbox" id="no-equip" name="checkbox" value="no-equip">
+                </fieldset>
+
+                <!-- Start workout -->
+                <input type="submit" value="Start workout" id="start-workout">
+            </form>
+
+        </section>
+
+        <section id="about">
+            <!-- Selve exercise-boksen -->
+            <div>
+                <!-- Foreløpig eksempel -->
+                <h1 id="test-timer"></h1>
+                <h2 id="exercise-header">Workout plan</h2>
+                <h3 id="countdown"></h3>
+                <img id="exercise-image" src="resources/workoutplan.jpg" alt="Something something..">
+
+                <!-- Jumping jacks: Jump to a position with your legs spead wide and hands going overhead, and then jump back to a position with the feet together and the arms at the sides. -->
+            </div>
+            <button aria-hidden="true" id="pause-button">Pause workout</button>
+            <button aria-hidden="true" id="play-button">Continue workout</button>
+        </section>
 
     </main>
 
     <footer>
 
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>

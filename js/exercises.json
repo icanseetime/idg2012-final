@@ -1,0 +1,120 @@
+{
+    "jumping-jacks": {
+        "id": 1,
+        "name": "Jumping jacks",
+        "path": "jumping-jack.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": true,
+        "equipment": false
+    },
+    "wall-sit": {
+        "id": 2,
+        "name": "Wall sit",
+        "path": "wall-sit.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "legs"
+    },
+    "push-ups": {
+        "id": 3,
+        "name": "Push-ups",
+        "path": "push-up.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "arms"
+    },
+    "crunch": {
+        "id": 4,
+        "name": "Crunches",
+        "path": "crunch.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "abdomen"
+    },
+    "step-ups": {
+        "id": 5,
+        "name": "Step-ups",
+        "path": "step-up.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": true,
+        "bodypart": "legs"
+    },
+    "squat": {
+        "id": 6,
+        "name": "Squats",
+        "path": "jumping-jack.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "legs"
+    },
+    "triceps-dip": {
+        "id": 7,
+        "name": "Triceps-dips",
+        "path": "triceps-dip.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": true,
+        "bodypart": "arms"
+    },
+    "plank": {
+        "id": 8,
+        "name": "Plank",
+        "path": "plank.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false
+    },
+    "running": {
+        "id": 9,
+        "name": "Running",
+        "path": "running.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "legs"
+    },
+    "lunge": {
+        "id": 10,
+        "name": "Lunges",
+        "path": "lunge.png",
+        "alt": "",
+        "time": "standard",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "legs"
+    },
+    "push-up-and-rotate": {
+        "id": 11,
+        "name": "Push-up and rotate",
+        "path": "push-up-rotate.png",
+        "alt": "",
+        "time": "split",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "arms"
+    },
+    "side-plank": {
+        "id": 12,
+        "name": "Side-plank",
+        "path": "side-plank.png",
+        "alt": "",
+        "time": "split",
+        "jumping": false,
+        "equipment": false,
+        "bodypart": "arms"
+    }
+}
