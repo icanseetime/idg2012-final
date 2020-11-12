@@ -43,22 +43,36 @@
                 <!-- Exclusion -->
                 <fieldset>
                     <legend>Exclude certain exercises</legend>
-                    <!-- Exclude bodyparts -->
-                    <label for="bodypart-exclusion">Exclude a specific part of the body</label>
-                    <select name="bodypart-exclusion" id="bodypart-exclusion">
-                        <option value="none" selected>None excluded</option>
-                        <option value="arms">No arms</option>
-                        <option value="legs">No legs</option>
-                        <option value="abdomen">No abdomen</option>
-                    </select>
+                    <!-- No arms -->
+                    <label for="no-arms">No arms</label>
+                    <input type="checkbox" id="no-arms" name="exclusion" value="no-arms">
+
+                    <!-- No legs -->
+                    <label for="no-legs">No legs</label>
+                    <input type="checkbox" id="no-legs" name="exclusion" value="no-legs">
+
+                    <!-- No abdomen -->
+                    <label for="no-abdomen">No abdomen</label>
+                    <input type="checkbox" id="no-abdomen" name="exclusion" value="no-abdomen">
+
+                    <!-- TODO: remove -- fix with CSS -->
+                    <br><br>
 
                     <!-- No jumping -->
-                    <label for="no-jump">No jumping</label>
-                    <input class="exclusion" type="checkbox" id="no-jump" name="checkbox" value="no-jump">
+                    <label for="no-jumping">No jumping</label>
+                    <input type="checkbox" id="no-jumping" name="exclusion" value="no-jumping">
 
                     <!-- No equipment -->
-                    <label for="no-equip">No use of any equipment</label>
-                    <input class="exclusion" type="checkbox" id="no-equip" name="checkbox" value="no-equip">
+                    <label for="no-equipment">No use of any equipment</label>
+                    <input type="checkbox" id="no-equipment" name="exclusion" value="no-equipment">
+                </fieldset>
+
+                <fieldset id="choices">
+                    <legend>Choose your exercises</legend>
+                    <div id="choose-exercise"></div>
+                    <button id="select-all">Select all</button>
+                    <button id="remove-all">Remove all</button>
+
                 </fieldset>
 
                 <!-- Start workout -->
@@ -89,6 +103,7 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- <script src="js/functions.js"></script> -->
     <script src="js/script.js"></script>
 </body>
 

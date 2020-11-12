@@ -1,30 +1,88 @@
 fetch('js/exercises.json')
     .then(res => res.json())
     .then(data => {
+        let keys = Object.keys(data)
+        // console.log(keys)
+
+        Object.values(data).forEach(exercise => {
+            // Create labels
+            let label = document.createElement('label')
+            label.setAttribute('for', keys[exercise.id])
+            label.innerHTML = `${exercise.name}`
+
+            // Create checkboxes
+            let checkbox = document.createElement('input')
+            checkbox.type = 'checkbox'
+            checkbox.id = keys[exercise.id]
+            checkbox.name = 'chosen-exercises'
+            checkbox.value = keys[exercise.id]
+
+            // Input into HTML
+            document.getElementById('choose-exercise').appendChild(label)
+            document.getElementById('choose-exercise').appendChild(checkbox)
+        })
+
+        // Disable exercises based on the checbox that is selected
+        function checkboxCheck(name, checkedPath) {
+            document.getElementById(name).addEventListener('change', function () {
+                if (this.checked) {
+                    Object.values(data).forEach(exercise => {
+                        if (exercise['involves'][checkedPath]) {
+                            document.querySelector(`label[for="${keys[exercise.id]}"]`).style.textDecoration = 'line-through'
+                            document.getElementById(keys[exercise.id]).disabled = true
+                            document.getElementById(keys[exercise.id]).checked = false
+                        }
+                    })
+                } else {
+                    Object.values(data).forEach(exercise => {
+                        if (exercise['involves'][checkedPath]) {
+                            document.querySelector(`label[for="${keys[exercise.id]}"]`).style.textDecoration = 'none'
+                            document.getElementById(keys[exercise.id]).disabled = false
+                        }
+                    })
+                }
+            })
+        }
+
+        // Bodyparts checkboxes
+        checkboxCheck('no-arms', 'arms')
+        checkboxCheck('no-legs', 'legs')
+        checkboxCheck('no-abdomen', 'abdomen')
+
+        // Other checkboxes
+        checkboxCheck('no-jumping', 'jumping')
+        checkboxCheck('no-equipment', 'equipment')
+
+        // Select all-button
+        document.getElementById('select-all').addEventListener('click', e => {
+            e.preventDefault()
+            let exerciseBoxes = document.querySelectorAll('input[name="chosen-exercises"]')
+            exerciseBoxes.forEach(box => {
+                if (!box.disabled) {
+                    box.checked = true
+                }
+            })
+        })
+
+        // Remove all-button
+        document.getElementById('remove-all').addEventListener('click', e => {
+            e.preventDefault()
+            let exerciseBoxes = document.querySelectorAll('input[name="chosen-exercises"]')
+            exerciseBoxes.forEach(box => {
+                box.checked = false
+            })
+        })
+
+
         document.getElementById('start-workout').addEventListener('click', e => {
             // Stop page from refreshing by submitting form
             e.preventDefault()
 
-            // Find chosen "excluded options"
-            let exclude = []
-            exclude['bodypart'] = document.getElementById('bodypart-exclusion').value
-            let checkboxes = document.querySelectorAll('input[name="checkbox"]:checked')
-            checkboxes.forEach(checked => {
-                exclude[checked.value] = true
-            })
-
             // Select exercises from JSON file
             let chosenExercises = []
-            Object.values(data).forEach(exercise => {
-                // Exclude bodyparts, jumping & equipment if chosen
-                if (!(exclude['no-jump'] && exercise.jumping)
-                    && !(exclude['no-equip'] && exercise.equipment)
-                    && (exclude['bodypart'] != exercise.bodypart)) {
-                    chosenExercises.push(exercise)
-                }
-            })
+            chosenExercises = document.querySelectorAll('input[name="chosen-exercises"]:checked')
             console.log(chosenExercises)
-
+            
             // Set length of exercise
             let numberOfExercises = chosenExercises.length
             let length = document.getElementById('minutes').value * 60
@@ -70,8 +128,8 @@ fetch('js/exercises.json')
 
                     // Change HTML
                     document.getElementById('exercise-header').innerHTML = exercise.name
-                    document.getElementById('exercise-image').src = `resources/${exercise.path}`
-                    document.getElementById('exercise-image').alt = `${exercise.alt}`
+                    document.getElementById('exercise-image').src = `resources / ${exercise.path} `
+                    document.getElementById('exercise-image').alt = `${exercise.alt} `
 
                     // Pause / continue workout
                     pauseButton.addEventListener('click', e => {

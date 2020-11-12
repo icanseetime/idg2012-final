@@ -1,120 +1,171 @@
 {
     "jumping-jacks": {
-        "id": 1,
+        "id": 0,
         "name": "Jumping jacks",
         "path": "jumping-jack.png",
         "alt": "",
         "time": "standard",
-        "jumping": true,
-        "equipment": false
+        "involves": {
+            "legs": true,
+            "arms": true,
+            "abdomen": false,
+            "jumping": true,
+            "equipment": false
+        }
     },
     "wall-sit": {
-        "id": 2,
+        "id": 1,
         "name": "Wall sit",
         "path": "wall-sit.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "legs"
+        "involves": {
+            "legs": true,
+            "arms": false,
+            "abdomen": false,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "push-ups": {
-        "id": 3,
+        "id": 2,
         "name": "Push-ups",
         "path": "push-up.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "arms"
+        "involves": {
+            "legs": false,
+            "arms": true,
+            "abdomen": true,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "crunch": {
-        "id": 4,
+        "id": 3,
         "name": "Crunches",
         "path": "crunch.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "abdomen"
+        "bodypart": "abdomen",
+        "involves": {
+            "legs": false,
+            "arms": false,
+            "abdomen": true,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "step-ups": {
-        "id": 5,
+        "id": 4,
         "name": "Step-ups",
         "path": "step-up.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": true,
-        "bodypart": "legs"
+        "involves": {
+            "legs": true,
+            "arms": false,
+            "abdomen": false,
+            "jumping": false,
+            "equipment": true
+        }
     },
     "squat": {
-        "id": 6,
+        "id": 5,
         "name": "Squats",
         "path": "jumping-jack.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "legs"
+        "involves": {
+            "legs": true,
+            "arms": false,
+            "abdomen": false,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "triceps-dip": {
-        "id": 7,
+        "id": 6,
         "name": "Triceps-dips",
         "path": "triceps-dip.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": true,
-        "bodypart": "arms"
+        "involves": {
+            "legs": false,
+            "arms": true,
+            "abdomen": false,
+            "jumping": false,
+            "equipment": true
+        }
     },
     "plank": {
-        "id": 8,
+        "id": 7,
         "name": "Plank",
         "path": "plank.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false
+        "involves": {
+            "legs": true,
+            "arms": true,
+            "abdomen": true,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "running": {
-        "id": 9,
+        "id": 8,
         "name": "Running",
         "path": "running.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "legs"
+        "involves": {
+            "legs": true,
+            "arms": false,
+            "abdomen": true,
+            "jumping": true,
+            "equipment": false
+        }
     },
     "lunge": {
-        "id": 10,
+        "id": 9,
         "name": "Lunges",
         "path": "lunge.png",
         "alt": "",
         "time": "standard",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "legs"
+        "involves": {
+            "legs": true,
+            "arms": false,
+            "abdomen": false,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "push-up-and-rotate": {
-        "id": 11,
+        "id": 10,
         "name": "Push-up and rotate",
         "path": "push-up-rotate.png",
         "alt": "",
         "time": "split",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "arms"
+        "involves": {
+            "legs": false,
+            "arms": true,
+            "abdomen": true,
+            "jumping": false,
+            "equipment": false
+        }
     },
     "side-plank": {
-        "id": 12,
+        "id": 11,
         "name": "Side-plank",
         "path": "side-plank.png",
         "alt": "",
         "time": "split",
-        "jumping": false,
-        "equipment": false,
-        "bodypart": "arms"
+        "involves": {
+            "legs": true,
+            "arms": true,
+            "abdomen": true,
+            "jumping": false,
+            "equipment": false
+        }
     }
 }
