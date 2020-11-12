@@ -38,13 +38,14 @@ fetch('js/exercises.json')
             pauseButton.style.display = 'inline-block'
             pauseButton.setAttribute('aria-hidden', 'false')
 
-            let timer = length
-            let etEllerAnnet = setInterval(function () {
-                if (timer >= 0) {
-                    document.getElementById('test-timer').innerHTML = timer
-                    timer--
-                }
-            }, 1000)
+            // Timer for testing - will be removed
+            // let timer = length
+            // let etEllerAnnet = setInterval(function () {
+            //     if (timer >= 0) {
+            //         document.getElementById('test-timer').innerHTML = timer
+            //         timer--
+            //     }
+            // }, 1000)
 
 
             // Displaying exercises on a timer
