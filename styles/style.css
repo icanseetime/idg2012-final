@@ -48,6 +48,15 @@ select {
     justify-content: center;
 } */
 
+#choose-exercise {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+input[type="checkbox"] {
+    margin: 5px;
+}
+
 fieldset {
     margin-bottom: 15px;
 }
