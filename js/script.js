@@ -74,15 +74,35 @@ fetch('js/exercises.json')
         })
 
 
+        // Start workout-button
         document.getElementById('start-workout').addEventListener('click', e => {
             // Stop page from refreshing by submitting form
             e.preventDefault()
 
             // Select exercises from JSON file
             let chosenExercises = []
-            chosenExercises = document.querySelectorAll('input[name="chosen-exercises"]:checked')
+            chosen = document.querySelectorAll('input[name="chosen-exercises"]:checked')
+            chosen.forEach(ex => {
+                chosenExercises.push(ex.value)
+            })
+
+            Object.values(data).forEach(exercise => {
+
+            })
+            console.log(chosen)
             console.log(chosenExercises)
-            
+
+            // let chosenExercises = []
+            // Object.values(data).forEach(exercise => {
+            //     // Exclude bodyparts, jumping & equipment if chosen
+            //     if (!(exclude['no-jump'] && exercise.jumping)
+            //         && !(exclude['no-equip'] && exercise.equipment)
+            //         && (exclude['bodypart'] != exercise.bodypart)) {
+            //         chosenExercises.push(exercise)
+            //     }
+            // })
+            // console.log(chosenExercises)
+
             // Set length of exercise
             let numberOfExercises = chosenExercises.length
             let length = document.getElementById('minutes').value * 60
@@ -95,16 +115,6 @@ fetch('js/exercises.json')
             const playButton = document.getElementById('play-button')
             pauseButton.style.display = 'inline-block'
             pauseButton.setAttribute('aria-hidden', 'false')
-
-            // Timer for testing - will be removed
-            // let timer = length
-            // let etEllerAnnet = setInterval(function () {
-            //     if (timer >= 0) {
-            //         document.getElementById('test-timer').innerHTML = timer
-            //         timer--
-            //     }
-            // }, 1000)
-
 
             // Displaying exercises on a timer
             let idx = 0
@@ -160,7 +170,7 @@ fetch('js/exercises.json')
                     })
                 }
             }
-            nextExercise()
+            // nextExercise()
 
         })
     })
