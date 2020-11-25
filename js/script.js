@@ -5,6 +5,11 @@ fetch('js/exercises.json')
         // console.log(keys)
 
         Object.values(data).forEach(exercise => {
+            // Create info-buttons
+            let info = document.createElement('img')
+            info.src = 'resources/info_icon.svg'
+            info.alt = `Click here for info about ${exercise.name}`
+
             // Create labels
             let label = document.createElement('label')
             label.setAttribute('for', keys[exercise.id])
@@ -18,6 +23,7 @@ fetch('js/exercises.json')
             checkbox.value = keys[exercise.id]
 
             // Input into HTML
+            document.getElementById('choose-exercise').appendChild(info)
             document.getElementById('choose-exercise').appendChild(label)
             document.getElementById('choose-exercise').appendChild(checkbox)
         })
