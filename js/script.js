@@ -86,22 +86,11 @@ fetch('js/exercises.json')
                 chosenExercises.push(ex.value)
             })
 
+            // Runs through all of the exercises
             Object.values(data).forEach(exercise => {
-
+                console.log(exercise)
             })
-            console.log(chosen)
             console.log(chosenExercises)
-
-            // let chosenExercises = []
-            // Object.values(data).forEach(exercise => {
-            //     // Exclude bodyparts, jumping & equipment if chosen
-            //     if (!(exclude['no-jump'] && exercise.jumping)
-            //         && !(exclude['no-equip'] && exercise.equipment)
-            //         && (exclude['bodypart'] != exercise.bodypart)) {
-            //         chosenExercises.push(exercise)
-            //     }
-            // })
-            // console.log(chosenExercises)
 
             // Set length of exercise
             let numberOfExercises = chosenExercises.length
@@ -118,58 +107,63 @@ fetch('js/exercises.json')
 
             // Displaying exercises on a timer
             let idx = 0
-            function nextExercise() {
-                let exercise = chosenExercises[idx]
-                idx++
 
-                if (idx <= numberOfExercises) {
-                    // Setting timers & countdown
-                    let exerciseSeconds = exerciseTimer / 1000
-                    document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
-                    // exerciseSeconds--
-                    let countdown = setInterval(function () {
-                        exerciseSeconds--
-                        if (exerciseSeconds >= 0) {
-                            document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
-                            console.log(idx, exerciseSeconds)
-                        }
-                    }, 1000)
-                    let exerciseCountdown = setTimeout(nextExercise, exerciseTimer)
-
-                    // Change HTML
-                    document.getElementById('exercise-header').innerHTML = exercise.name
-                    document.getElementById('exercise-image').src = `resources / ${exercise.path} `
-                    document.getElementById('exercise-image').alt = `${exercise.alt} `
-
-                    // Pause / continue workout
-                    pauseButton.addEventListener('click', e => {
-                        clearTimeout(exerciseCountdown)
-                        clearInterval(countdown)
-
-                        // Buttons
-                        pauseButton.style.display = 'none'
-                        pauseButton.setAttribute('aria-hidden', 'true')
-                        playButton.style.display = 'inline-block'
-                        playButton.setAttribute('aria-hidden', 'false')
-                    })
-                    playButton.addEventListener('click', e => {
-                        exerciseCountdown = setTimeout(nextExercise, exerciseSeconds * 1000)
-                        countdown = setInterval(function () {
-                            exerciseSeconds--
-                            if (exerciseSeconds >= 0) {
-                                document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
-                                // exerciseSeconds--
-                            }
-                        }, 1000)
-
-                        // Buttons
-                        playButton.style.display = 'none'
-                        playButton.setAttribute('aria-hidden', 'true')
-                        pauseButton.style.display = 'inline-block'
-                        pauseButton.setAttribute('aria-hidden', 'false')
-                    })
-                }
+            function runThroughExercises() {
+                
             }
+
+            // function nextExercise() {
+            //     let exercise = chosenExercises[idx]
+            //     idx++
+
+            //     if (idx <= numberOfExercises) {
+            //         // Setting timers & countdown
+            //         let exerciseSeconds = exerciseTimer / 1000
+            //         document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
+            //         // exerciseSeconds--
+            //         let countdown = setInterval(function () {
+            //             exerciseSeconds--
+            //             if (exerciseSeconds >= 0) {
+            //                 document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
+            //                 console.log(idx, exerciseSeconds)
+            //             }
+            //         }, 1000)
+            //         let exerciseCountdown = setTimeout(nextExercise, exerciseTimer)
+
+            //         // Change HTML
+            //         document.getElementById('exercise-header').innerHTML = exercise.name
+            //         document.getElementById('exercise-image').src = `resources / ${exercise.path} `
+            //         document.getElementById('exercise-image').alt = `${exercise.alt} `
+
+            //         // Pause / continue workout
+            //         pauseButton.addEventListener('click', e => {
+            //             clearTimeout(exerciseCountdown)
+            //             clearInterval(countdown)
+
+            //             // Buttons
+            //             pauseButton.style.display = 'none'
+            //             pauseButton.setAttribute('aria-hidden', 'true')
+            //             playButton.style.display = 'inline-block'
+            //             playButton.setAttribute('aria-hidden', 'false')
+            //         })
+            //         playButton.addEventListener('click', e => {
+            //             exerciseCountdown = setTimeout(nextExercise, exerciseSeconds * 1000)
+            //             countdown = setInterval(function () {
+            //                 exerciseSeconds--
+            //                 if (exerciseSeconds >= 0) {
+            //                     document.getElementById('countdown').innerHTML = `${exerciseSeconds} seconds`
+            //                     // exerciseSeconds--
+            //                 }
+            //             }, 1000)
+
+            //             // Buttons
+            //             playButton.style.display = 'none'
+            //             playButton.setAttribute('aria-hidden', 'true')
+            //             pauseButton.style.display = 'inline-block'
+            //             pauseButton.setAttribute('aria-hidden', 'false')
+            //         })
+            //     }
+            // }
             // nextExercise()
 
         })
