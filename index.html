@@ -22,11 +22,6 @@
     </nav>
 
     <main>
-        <section id="about">
-            <!-- Forklaring av hva som skjer på nettsiden -->
-            <!-- <img src="resources/workoutplan.jpg" alt="Image that shows all the exercises in the 7 minute workout plan."> -->
-        </section>
-
         <section id="exercise-choices">
             <!-- Valg av type exercise ++ -->
             <h2>Customize your workout</h2>
@@ -36,7 +31,7 @@
                     <legend>Choose the length of your workout</legend>
                     <label for="minutes">Length of workout in minutes</label>
                     <!-- TODO: change value to 7 and min to 3, changed for testing purposes -->
-                    <input type="number" id="minutes" value="1" max="60" min="1">
+                    <input type="number" id="minutes" value="3" max="60" min="1">
                 </fieldset>
 
 
@@ -81,18 +76,16 @@
 
         </section>
 
-        <section id="about">
+        <section id="workout">
             <!-- Selve exercise-boksen -->
             <div>
-                <!-- Foreløpig eksempel -->
-                <h2 id="exercise-header">Workout plan</h2>
+                <h2 id="exercise-header"></h2>
+                <button aria-hidden="true" id="pause-button">Pause workout</button>
+                <button aria-hidden="true" id="play-button">Continue workout</button>
                 <h3 id="countdown"></h3>
-                <img id="exercise-image" src="resources/workoutplan.jpg" alt="Something something..">
-
-                <!-- Jumping jacks: Jump to a position with your legs spead wide and hands going overhead, and then jump back to a position with the feet together and the arms at the sides. -->
+                <img id="exercise-image" src="" alt="">
             </div>
-            <button aria-hidden="true" id="pause-button">Pause workout</button>
-            <button aria-hidden="true" id="play-button">Continue workout</button>
+
         </section>
 
     </main>
@@ -102,8 +95,8 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- <script src="js/functions.js"></script> -->
-    <script src="js/script.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
