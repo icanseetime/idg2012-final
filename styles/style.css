@@ -1,31 +1,33 @@
 /* STYLE VARIABLES */
 :root {
-    --background-color: rgb(5, 5, 5);
-    --text-color: rgb(250, 250, 250);
+	--background-color: rgb(5, 5, 5);
+	--text-color: rgb(250, 250, 250);
 }
 
 /* GENERAL */
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 /* HEADER */
 /* Navigation */
 nav ul {
-    display: flex;
-    width: 30vw;
-    justify-content: space-evenly;
-    list-style-type: none;
+	display: flex;
+	width: 30vw;
+	justify-content: space-evenly;
+	list-style-type: none;
+	/* Fix issues with centering the nav */
+	padding-inline-start: 0;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: var(--text-color);
+	text-decoration: none;
+	color: var(--text-color);
 }
 
 /* MAIN */
@@ -49,20 +51,20 @@ select {
 } */
 
 #choose-exercise {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
 }
 
-input[type="checkbox"] {
-    margin: 5px;
+input[type='checkbox'] {
+	margin: 5px;
 }
 
 fieldset {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 /* Exercise section */
 #pause-button,
 #play-button {
-    display: none;
+	display: none;
 }
