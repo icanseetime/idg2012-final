@@ -6,16 +6,17 @@
 
 /* GENERAL */
 body {
-	background-color: var(--background-color);
-	color: var(--text-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* HEADER */
 /* Navigation */
+
 nav ul {
 	display: flex;
 	width: 30vw;
@@ -50,21 +51,41 @@ select {
     justify-content: center;
 } */
 
-#choose-exercise {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+legend {
+  font-size: 20px;
 }
 
-input[type='checkbox'] {
-	margin: 5px;
+#choose-exercise {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+label {
+  font-size: 18px;
+  text-align: left;
+}
+
+input[type="checkbox"] {
+  margin: 5px;
+  transform: scale(1.7);
+}
+#exclusion input {
+  margin-right: 20px;
 }
 
 fieldset {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+#choose-exercise img {
+  width: 25%;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 /* Exercise section */
 #pause-button,
 #play-button {
-	display: none;
+  display: none;
 }
