@@ -2,19 +2,133 @@ fetch('js/exercises.json')
     .then(res => res.json())
     .then(data => {
         let keys = Object.keys(data)
-        // console.log("Keys: ", keys)
+        console.log("Keys: ", keys)
 
         // Set sections of page
         let exerciseChoicesSection = document.getElementById('exercise-choices')
         let workoutSection = document.getElementById('workout')
+        let aboutSection = document.getElementById('about')
+        let viewPreviousSection = document.getElementById('view-previous')
+
+        // Read about exercises
+        document.getElementById('about-link').addEventListener('click', e => {
+            // Hide / display chosen section
+            e.preventDefault()
+            aboutSection.style.display = "block"
+            exerciseChoicesSection.style.display = "none"
+            workoutSection.style.display = "none"
+            viewPreviousSection.style.display = "none"
+
+            // Create overview-section
+            if (!document.querySelector('#overview-section')) {
+                let overviewSection = document.createElement('section')
+                overviewSection.id = "overview-section"
+
+                let ul = document.createElement('ul')
+                Object.values(data).forEach(exercise => {
+                    console.log(exercise)
+
+                    //List items
+                    let li = document.createElement('li')
+                    let a = document.createElement('a')
+                    a.href = ""
+                    a.id = `read-${keys[exercise.id]}`
+
+                    // Headings
+                    heading = document.createElement('h3')
+                    heading.innerHTML = exercise.name
+                    a.appendChild(heading)
+
+                    // Illustrations
+                    illustration = document.createElement('img')
+                    illustration.src = `resources/${exercise.path}`
+                    illustration.alt = `Read about ${exercise.name}`
+                    a.appendChild(illustration)
+
+                    a.addEventListener('click', e => {
+                        e.preventDefault()
+                        // Hide overview-section
+                        overviewSection.style.display = "none"
+
+                        // Create info-section
+                        let infoSection = document.createElement('section')
+                        infoSection.id = "info-section"
+
+                        // Create header
+                        let h3 = document.createElement('h3')
+                        h3.innerHTML = exercise.name
+                        infoSection.appendChild(h3)
+
+                        // Create illustration
+                        let img = document.createElement('img')
+                        img.src = `resources/${exercise.path}`
+                        img.alt = exercise.alt
+                        infoSection.appendChild(img)
+
+                        // Create paragraphs that show the steps
+                        Object.values(exercise.steps).forEach((step, idx) => {
+                            let h4 = document.createElement('h4')
+                            h4.innerHTML = `Step ${idx + 1}`
+                            infoSection.appendChild(h4)
+                            let p = document.createElement('p')
+                            p.innerHTML = `${step}`
+                            infoSection.appendChild(p)
+                        })
+
+                        // Create back-button
+                        let button = document.createElement('button')
+                        button.innerHTML = "Go back"
+
+                        button.addEventListener('click', e => {
+                            document.getElementById('about').removeChild(document.getElementById('info-section'))
+                            overviewSection.style.display = "block"
+                        })
+                        infoSection.appendChild(button)
+
+                        aboutSection.appendChild(infoSection)
+                    })
+
+                    li.appendChild(a)
+                    ul.appendChild(li)
+                })
+                overviewSection.appendChild(ul)
+                aboutSection.appendChild(overviewSection)
+            }
+
+        })
+
+        // Choose your workout
+        document.getElementById('exercise-choices-link').addEventListener('click', e => {
+            // Hide / display chosen section
+            e.preventDefault()
+            aboutSection.style.display = "none"
+            exerciseChoicesSection.style.display = "block"
+            workoutSection.style.display = "none"
+            viewPreviousSection.style.display = "none"
+        })
+
+        // View previous workouts
+        document.getElementById('view-previous-link').addEventListener('click', e => {
+            // Hide / display chosen section
+            e.preventDefault()
+            aboutSection.style.display = "none"
+            exerciseChoicesSection.style.display = "none"
+            workoutSection.style.display = "none"
+            viewPreviousSection.style.display = "block"
+        })
+
+        // "Home" link / 7-minute workout h1
+        document.getElementById('home').addEventListener('click', e => {
+            // Hide / display chosen section
+            e.preventDefault()
+            aboutSection.style.display = "none"
+            exerciseChoicesSection.style.display = "block"
+            workoutSection.style.display = "none"
+            viewPreviousSection.style.display = "none"
+        })
 
         // Add checkboxes etc to form from JSON-data
         Object.values(data).forEach(exercise => {
-            // Create info-buttons
-            let info = document.createElement('img')
-            info.src = 'resources/info_icon.svg'
-            info.alt = `Click here for info about ${exercise.name}`
-
             // Create labels
             let label = document.createElement('label')
             label.setAttribute('for', keys[exercise.id])
@@ -28,9 +142,9 @@ fetch('js/exercises.json')
             checkbox.value = keys[exercise.id]
 
             // Input into HTML
-            document.getElementById('choose-exercise').appendChild(info)
-            document.getElementById('choose-exercise').appendChild(label)
+            // document.getElementById('choose-exercise').appendChild(info)
             document.getElementById('choose-exercise').appendChild(checkbox)
+            document.getElementById('choose-exercise').appendChild(label)
         })
 
         // Disable exercises based on the checbox that is selected
@@ -84,6 +198,20 @@ fetch('js/exercises.json')
             })
         })
 
+        //---------------------------TEST AREA--------------------------------
+
+        // let testArray = ['one', 'two', 'three', 'four']
+
+        // for (let i = 0; i < testArray.length; i++) {
+        //     if (testArray[i] == 'two') testArray.splice(i, 1)
+        //     console.log(i, testArray)
+        // }
+
+
+        //--------------------------------------------------------------------
+
+
+
         // Start workout-button
         document.getElementById('start-workout').addEventListener('click', e => {
             // Stop page from refreshing by submitting form
@@ -105,21 +233,35 @@ fetch('js/exercises.json')
             let restTimer = Math.floor(length * 0.1325 / (numberOfExercises - 1)) * 1000
             console.table("Number of exercises:", numberOfExercises, "Total length:", length, "Length of exercise:", exerciseTimer, "Length of break:", restTimer)
 
-            // Display pause-button
-            const pauseButton = document.getElementById('pause-button')
-            const playButton = document.getElementById('play-button')
-            pauseButton.style.display = 'inline-block'
-            pauseButton.setAttribute('aria-hidden', 'false')
+            // Hide "Save workout" and "Finish workout"-buttons if they previously existed
+            if (document.getElementById('save-button') || document.getElementById('finish-button')) {
+                document.getElementById('workout').removeChild(document.getElementById('save-button'))
+                document.getElementById('workout').removeChild(document.getElementById('finish-button'))
+            }
 
+            // Create and display pause-button
+            if (!document.getElementById('pause-button')) {
+                const pauseButton = document.createElement('button')
+                pauseButton.id = "pause-button"
+                pauseButton.innerHTML = "Pause workout"
+                document.getElementById('workout').insertBefore(pauseButton, document.getElementById('countdown'))
+            }
 
-            console.log(chosenExercises)
-
+            // Set a minimum of 3 exercises
             if (chosenExercises.length <= 2) {
+                if (document.querySelector('section#exercise-choices p')) {
+                    // Remove previous error message
+                    document.getElementById('exercise-choices').removeChild(document.querySelector('p'))
+                }
                 //Display error message
-                document.getElementById('exercise-header').innerHTML = "You have to choose at least three exercises. Please try again."
+                let errorMessage = document.createElement('p')
+                errorMessage.innerHTML = "You have to choose at least three exercises. Please try again."
+                errorMessage.setAttribute('role', 'alert')
+                exerciseChoicesSection.appendChild(errorMessage)
             } else {
                 // Hide form
-                exerciseChoicesSection.style.display = 'none'
+                exerciseChoicesSection.style.display = "none"
+                workoutSection.style.display = "block"
                 runThroughExercises(chosenExercises, exerciseTimer, restTimer)
             }
 
@@ -149,7 +291,11 @@ fetch('js/exercises.json')
                 let currentExercise
                 let idx = 0
 
-                console.log(workout)
+                // Timer arrays
+                let exTimer = []
+                let breakTimer = []
+                let endTimer = []
+
                 workout.forEach(instance => {
                     total += 1000
                     if (typeof (instance) == 'object') {
@@ -158,24 +304,51 @@ fetch('js/exercises.json')
                         if (instance == workout[0]) {
                             // First exercise - for immediate start
                             displayExercise(instance, lengthOfExercise)
-                            setTimeout(displayBreak, total, lengthOfBreak)
+                            breakTimer[instance] = setTimeout(displayBreak, total, lengthOfBreak)
                         } else if (instance == workout[workout.length - 1]) {
                             // Set timeout for finish-line 
-                            setTimeout(endOfExercises, total + 1000)
+                            endTimer[instance] = setTimeout(endOfExercises, total + 1000)
                         } else {
                             // Set timeout for next break and add time to counter
-                            setTimeout(displayBreak, total + 1000, lengthOfBreak)
+                            breakTimer[instance] = setTimeout(displayBreak, total + 1000, lengthOfBreak)
                         }
                         total += lengthOfBreak
                         idx++
+                        // Remove exercises that are done from chosen exercises
+                        chosenExercises.shift()
+                        console.log(chosenExercises)
                     } else if (typeof (instance) == 'string') {
                         // Set timeout for next exercise and add time to counter
-                        setTimeout(displayExercise, total + 1000, currentExercise, lengthOfExercise)
+                        exTimer[instance] = setTimeout(displayExercise, total + 1000, currentExercise, lengthOfExercise)
                         total += lengthOfExercise
                         idx++
                     }
                 })
             }
+
+            let timesClicked = 0
+            pauseButton.addEventListener('click', e => {
+                timesClicked++
+                // Continue workout
+                if (timesClicked % 2 == 0) {
+                    pauseButton.id = "pause-button"
+                    pauseButton.innerHTML = "Pause workout"
+                } else { // Pause workout
+                    pauseButton.id = "play-button"
+                    pauseButton.innerHTML = "Continue workout"
+                    sessionStorage.setItem('seconds', sessionStorage.getItem('timer'))
+                    console.log(exTimer, breakTimer, endTimer)
+                    exTimer.forEach(timer => {
+                        clearTimeout(timer)
+                    })
+                    breakTimer.forEach(timer => {
+                        clearTimeout(timer)
+                    })
+                    endTimer.forEach(timer => {
+                        clearTimeout(timer)
+                    })
+                }
+            })
 
             // Setting the countdown timer
             function countdownTimer(length) {
@@ -187,18 +360,20 @@ fetch('js/exercises.json')
                     if (exerciseSeconds >= 0) {
                         document.getElementById('countdown').innerHTML = `${Math.round(exerciseSeconds)} seconds`
                         // console.log(exerciseSeconds)
+                        sessionStorage.setItem('timer', exerciseSeconds)
                     }
                 }, 1000)
             }
 
             // Displays the exercise
             function displayExercise(currentExercise, lengthOfExercise) {
-                console.log("Exercise", currentExercise, lengthOfExercise / 1000)
+                // console.log("Exercise", currentExercise, lengthOfExercise / 1000)
                 document.getElementById('exercise-header').innerHTML = `${currentExercise.name}`
                 document.getElementById('exercise-image').src = `resources/${currentExercise.path}`
                 document.getElementById('exercise-image').alt = `${currentExercise.alt}`
                 document.getElementById('exercise-image').style.transform = "scaleX(1)"
 
+                // Split time for certain exercises
                 if (currentExercise.time == 'split') {
                     lengthOfExercise = lengthOfExercise / 2
                     countdownTimer(lengthOfExercise)
@@ -226,38 +401,21 @@ fetch('js/exercises.json')
                 document.getElementById('exercise-image').src = ""
                 document.getElementById('exercise-image').alt = ""
                 document.getElementById('countdown').innerText = ""
+
+                // Hide pause/continue-workout button
+                document.getElementById('workout').removeChild(document.getElementById('pause-button'))
+
+                // Save workout- button
+                let saveButton = document.createElement('button')
+                saveButton.id = "save-button"
+                saveButton.innerHTML = "Save workout"
+                document.getElementById('workout').appendChild(saveButton)
+
+                // Finish workout-button
+                let finishButton = document.createElement('button')
+                finishButton.id = "finish-button"
+                finishButton.innerHTML = "Finish workout"
+                document.getElementById('workout').appendChild(finishButton)
             }
-
-
-
-            // OLD FUNCTION - NOT IN USE -- JUST FOR REFERENCE
-            // function nextExercise() {
-            //     // let exercise = chosenExercises[idx]
-            //     idx++
-            //     if (idx <= numberOfExercises) {
-
-            //         // Pause / continue workout
-            //         pauseButton.addEventListener('click', e => {
-            //             clearTimeout(exerciseCountdown)
-            //             clearInterval(countdown)
-
-            //             // Buttons
-            //             pauseButton.style.display = 'none'
-            //             pauseButton.setAttribute('aria-hidden', 'true')
-            //             playButton.style.display = 'inline-block'
-            //             playButton.setAttribute('aria-hidden', 'false')
-            //         })
-            //         playButton.addEventListener('click', e => {
-
-            //             // Buttons
-            //             playButton.style.display = 'none'
-            //             playButton.setAttribute('aria-hidden', 'true')
-            //             pauseButton.style.display = 'inline-block'
-            //             pauseButton.setAttribute('aria-hidden', 'false')
-            //         })
-            //     }
-            // }
-            // // nextExercise()
-
         })
     })

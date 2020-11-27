@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Normalize.css to make sure it displays similarly in most browsers -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>7-minute workout</title>
@@ -11,17 +12,21 @@
 
 <body>
     <header>
-        <h1>7-minute workout</h1>
+        <h1><a id="home" href="#exercise-choices">7-minute workout</a></h1>
     </header>
     <nav>
         <ul>
-            <li><a href="#about">About this page</a></li>
-            <li><a href="#exercise-choices">Choose your workout</a></li>
-            <li><a href="#">View previous workouts</a></li>
+            <li><a id="about-link" href="#about">Read about exercises</a></li>
+            <li><a id="exercise-choices-link" href="#exercise-choices">Choose your workout</a></li>
+            <li><a id="view-previous-link" href="#view-previous">View previous workouts</a></li>
         </ul>
     </nav>
 
     <main>
+        <section id="about">
+            <h2>Read about exercises</h2>
+        </section>
+
         <section id="exercise-choices">
             <!-- Valg av type exercise ++ -->
             <h2>Customize your workout</h2>
@@ -39,62 +44,52 @@
                 <fieldset id="exclusion">
                     <legend>Exclude certain exercises</legend>
                     <!-- No arms -->
-                    <label for="no-arms">No arms</label>
                     <input type="checkbox" id="no-arms" name="exclusion" value="no-arms">
+                    <label for="no-arms">No arms</label>
 
                     <!-- No legs -->
-                    <label for="no-legs">No legs</label>
                     <input type="checkbox" id="no-legs" name="exclusion" value="no-legs">
+                    <label for="no-legs">No legs</label>
 
                     <!-- No abdomen -->
-                    <label for="no-abdomen">No abdomen</label>
                     <input type="checkbox" id="no-abdomen" name="exclusion" value="no-abdomen">
+                    <label for="no-abdomen">No abdomen</label>
 
                     <!-- No jumping -->
-                    <label for="no-jumping">No jumping</label>
                     <input type="checkbox" id="no-jumping" name="exclusion" value="no-jumping">
-
-                    <br><br>
+                    <label for="no-jumping">No jumping</label>
 
                     <!-- No equipment -->
-                    <label for="no-equipment">No use of any equipment</label>
                     <input type="checkbox" id="no-equipment" name="exclusion" value="no-equipment">
+                    <label for="no-equipment">No use of any equipment</label>
+
                 </fieldset>
 
                 <fieldset id="choices">
                     <legend>Choose your exercises</legend>
-                    <div id="choose-exercise"></div>
                     <button id="select-all">Select all</button>
                     <button id="remove-all">Remove all</button>
-
+                    <div id="choose-exercise"></div>
                 </fieldset>
 
                 <!-- Start workout -->
                 <input type="submit" value="Start workout" id="start-workout">
             </form>
-
         </section>
 
+        <!-- Selve exercise-boksen -->
         <section id="workout">
-            <!-- Selve exercise-boksen -->
-            <div>
-                <h2 id="exercise-header"></h2>
-                <button aria-hidden="true" id="pause-button">Pause workout</button>
-                <button aria-hidden="true" id="play-button">Continue workout</button>
-                <h3 id="countdown"></h3>
-                <img id="exercise-image" src="" alt="">
-            </div>
-
+            <h2 id="exercise-header"></h2>
+            <h3 id="countdown"></h3>
+            <img id="exercise-image" src="" alt="">
         </section>
 
+        <section id="view-previous">
+
+        </section>
     </main>
 
-    <footer>
-
-    </footer>
-
     <!-- Scripts -->
-    <script src="./js/functions.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
