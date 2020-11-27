@@ -1,91 +1,218 @@
-/* STYLE VARIABLES */
+/* STYLE */
 :root {
-	--background-color: rgb(5, 5, 5);
-	--text-color: rgb(250, 250, 250);
+    /* Colors */
+    --background-color: rgb(5, 5, 5);
+    --text-color: rgb(250, 250, 250);
+    --extra-color: #dd571c;
+
+    /* Fonts */
+    --regular-font: 'tiresias_infofontregular';
+    --italic-font: 'tiresias_infofontitalic';
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'tiresias_infofontregular';
+    src: url('fonts/Tiresias_Infofont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tiresias_infofontitalic';
+    src: url('fonts/Tiresias_Infofont_Italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* GENERAL */
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--regular-font);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    max-width: 90vw;
+    margin-bottom: 50px;
+}
+
+p {
+    line-height: 1.5;
 }
 
 /* HEADER */
-/* Navigation */
+header {
+    max-width: 90vw;
+}
 
+h1 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Navigation */
 nav ul {
-	display: flex;
-	width: 30vw;
-	justify-content: space-evenly;
-	list-style-type: none;
-	/* Fix issues with centering the nav */
-	padding-inline-start: 0;
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    list-style-type: none;
+    /* Fix issues with centering the nav */
+    padding-inline-start: 0;
 }
 
 nav ul li a {
-	text-decoration: none;
-	color: var(--text-color);
+    text-decoration: none;
+    color: var(--text-color);
 }
 
-/* MAIN */
 /* Forms */
-/* form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 60%;
-}
-
-input[type="number"],
-select {
-    width: 20vw;
-    margin-bottom: 20px;
-}
-
-#exercise-choices {
-    display: flex;
-    justify-content: center;
-} */
-
 legend {
-  font-size: 20px;
+    font-size: 20px;
+    padding: 0 10px;
 }
 
 #choose-exercise {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#choose-exercise input {
+    justify-self: end;
+}
+
+#choose-exercise * {
+    align-self: baseline;
 }
 
 label {
-  font-size: 18px;
-  text-align: left;
+    font-size: 18px;
+    text-align: left;
 }
 
-input[type="checkbox"] {
-  margin: 5px;
-  transform: scale(1.7);
-}
-#exclusion input {
-  margin-right: 20px;
+input[type='checkbox'] {
+    margin: 10px;
+    transform: scale(1.5);
 }
 
 fieldset {
-  margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
-#choose-exercise img {
-  width: 25%;
-  border-radius: 50%;
-  background-color: white;
-  margin-bottom: 10px;
+/* Buttons */
+button,
+input[type='submit'] {
+    display: inline-block;
+    padding: .35em 1.2em;
+    border: .1em solid var(--extra-color);
+    margin: 0 .3em .3em 0;
+    /* border-radius: .12em; */
+    border-radius: .2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: var(--text-color);
+    text-align: center;
+    transition: all .2s;
+
+    background-color: transparent;
+    margin: 15px;
 }
 
-/* Exercise section */
-#pause-button,
-#play-button {
-  display: none;
+button:hover,
+input:hover[type='submit'] {
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+
+button:active,
+input:active[type='submit'] {
+    position: relative;
+    top: 1px;
+}
+
+/* Sections */
+/* section#workout,
+section#about,
+section#view-previous {
+    display: none;
+} */
+
+/* ABOUT EXERCISES section */
+section#about img {
+    width: 100%;
+}
+
+/* Overview subsection */
+section#overview-section ul {
+    max-width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline-start: 0;
+}
+
+section#overview-section ul li {
+    list-style-type: none;
+    padding: 10px 10px 30px 10px;
+    border: 1px solid var(--extra-color);
+}
+
+section#overview-section ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Informations subsection */
+section#info-section h4 {
+    font-size: 1.2em;
+    margin: 1.5em 0 0 0;
+}
+
+section#info-section p {
+    margin-bottom: 3vh;
+    max-width: 80vw;
+    white-space: pre-line;
+    text-align: left;
+}
+
+section#info-section img {
+    max-width: 50vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: remove, used for testing */
+section#exercise-choices {
+    display: none;
+}
+
+section#about {
+    display: block;
+}
+
+section#workout {
+    display: none;
+}
+
+section#view-previous {
+    display: none;
 }
