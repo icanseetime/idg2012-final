@@ -7,20 +7,12 @@
 
     /* Fonts */
     --regular-font: 'tiresias_infofontregular';
-    --italic-font: 'tiresias_infofontitalic';
 }
 
 /* Fonts */
 @font-face {
     font-family: 'tiresias_infofontregular';
     src: url('fonts/Tiresias_Infofont-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'tiresias_infofontitalic';
-    src: url('fonts/Tiresias_Infofont_Italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,7 +30,6 @@ body {
 
 main {
     max-width: 90vw;
-    margin-bottom: 50px;
 }
 
 p {
@@ -61,8 +52,12 @@ nav ul {
     width: 30vw;
     justify-content: space-evenly;
     list-style-type: none;
-    /* Fix issues with centering the nav */
     padding-inline-start: 0;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
 }
 
 nav ul li a {
@@ -76,15 +71,19 @@ legend {
     padding: 0 10px;
 }
 
+#choose-exclusions,
 #choose-exercise {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, .6fr 1fr);
+    row-gap: 10px;
 }
 
+#choose-exclusions input,
 #choose-exercise input {
     justify-self: end;
 }
 
+#choose-exclusions *,
 #choose-exercise * {
     align-self: baseline;
 }
@@ -137,11 +136,11 @@ input:active[type='submit'] {
 }
 
 /* Sections */
-/* section#workout,
+section#workout,
 section#about,
 section#view-previous {
     display: none;
-} */
+}
 
 /* ABOUT EXERCISES section */
 section#about img {
@@ -186,22 +185,8 @@ section#info-section img {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* TODO: remove, used for testing */
-section#exercise-choices {
+/* TODO: remove when code is finished, used for testing */
+/* section#exercise-choices {
     display: none;
 }
 
@@ -215,4 +200,4 @@ section#workout {
 
 section#view-previous {
     display: none;
-}
+} */

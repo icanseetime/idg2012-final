@@ -10,7 +10,7 @@ fetch('js/exercises.json')
         let aboutSection = document.getElementById('about')
         let viewPreviousSection = document.getElementById('view-previous')
 
-        // Read about exercises
+        // SECTION || READ ABOUT EXERCISES
         document.getElementById('about-link').addEventListener('click', e => {
             // Hide / display chosen section
             e.preventDefault()
@@ -78,13 +78,13 @@ fetch('js/exercises.json')
                         // Create back-button
                         let button = document.createElement('button')
                         button.innerHTML = "Go back"
-
                         button.addEventListener('click', e => {
                             document.getElementById('about').removeChild(document.getElementById('info-section'))
                             overviewSection.style.display = "block"
                         })
                         infoSection.appendChild(button)
 
+                        // Display everything in the about-section
                         aboutSection.appendChild(infoSection)
                     })
 
@@ -97,7 +97,7 @@ fetch('js/exercises.json')
 
         })
 
-        // Choose your workout
+        // SECTION || CHOOSE YOUR WORKOUT
         document.getElementById('exercise-choices-link').addEventListener('click', e => {
             // Hide / display chosen section
             e.preventDefault()
@@ -107,7 +107,7 @@ fetch('js/exercises.json')
             viewPreviousSection.style.display = "none"
         })
 
-        // View previous workouts
+        // SECTION || VIEW PREVIOUS WORKOUTS
         document.getElementById('view-previous-link').addEventListener('click', e => {
             // Hide / display chosen section
             e.preventDefault()
