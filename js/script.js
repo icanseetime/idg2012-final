@@ -107,6 +107,16 @@ fetch('js/exercises.json')
             viewPreviousSection.style.display = "none"
         })
 
+        // "Home" link / 7-minute workout h1
+        document.getElementById('home').addEventListener('click', e => {
+            // Hide / display chosen section
+            e.preventDefault()
+            aboutSection.style.display = "none"
+            exerciseChoicesSection.style.display = "block"
+            workoutSection.style.display = "none"
+            viewPreviousSection.style.display = "none"
+        })
+
         // SECTION || VIEW PREVIOUS WORKOUTS
         document.getElementById('view-previous-link').addEventListener('click', e => {
             // Hide / display chosen section
@@ -117,15 +127,6 @@ fetch('js/exercises.json')
             viewPreviousSection.style.display = "block"
         })
 
-        // "Home" link / 7-minute workout h1
-        document.getElementById('home').addEventListener('click', e => {
-            // Hide / display chosen section
-            e.preventDefault()
-            aboutSection.style.display = "none"
-            exerciseChoicesSection.style.display = "block"
-            workoutSection.style.display = "none"
-            viewPreviousSection.style.display = "none"
-        })
 
         // Add checkboxes etc to form from JSON-data
         Object.values(data).forEach(exercise => {
@@ -314,9 +315,9 @@ fetch('js/exercises.json')
                         }
                         total += lengthOfBreak
                         idx++
-                        // Remove exercises that are done from chosen exercises
-                        chosenExercises.shift()
-                        console.log(chosenExercises)
+                        // TODO: Remove exercises that are done from chosen exercises
+                        // chosenExercises.shift()
+                        // console.log(chosenExercises)
                     } else if (typeof (instance) == 'string') {
                         // Set timeout for next exercise and add time to counter
                         exTimer[instance] = setTimeout(displayExercise, total + 1000, currentExercise, lengthOfExercise)

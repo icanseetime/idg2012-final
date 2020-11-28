@@ -153,12 +153,18 @@ section#overview-section ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-inline-start: 0;
+    row-gap: 2em;
 }
 
 section#overview-section ul li {
     list-style-type: none;
     padding: 10px 10px 30px 10px;
-    border: 1px solid var(--extra-color);
+    border-bottom: 1px solid var(--extra-color);
+}
+
+section#overview-section ul li:nth-child(3n+1):nth-last-child(-n+3),
+section#overview-section ul li:nth-child(3n+1):nth-last-child(-n+3)~li {
+    border-bottom: none;
 }
 
 section#overview-section ul li a {
