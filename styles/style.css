@@ -6,7 +6,7 @@
     --extra-color: #dd571c;
 
     /* Fonts */
-    --heading-font: 'tiresias_infofontregular';
+    --heading-font: 'tiresias_infofontregular', sans-serif;
     --regular-font: Arial, sans-serif;
 }
 
