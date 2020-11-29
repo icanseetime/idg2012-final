@@ -6,7 +6,8 @@
     --extra-color: #dd571c;
 
     /* Fonts */
-    --regular-font: 'tiresias_infofontregular';
+    --heading-font: 'tiresias_infofontregular';
+    --regular-font: Arial, sans-serif;
 }
 
 /* Fonts */
@@ -21,7 +22,7 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: var(--regular-font);
+    font-family: var(--heading-font);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,6 +35,7 @@ main {
 
 p {
     line-height: 1.5;
+    font-family: var(--regular-font);
 }
 
 /* HEADER */
@@ -49,7 +51,7 @@ h1 a {
 /* Navigation */
 nav ul {
     display: flex;
-    width: 30vw;
+    width: 70vw;
     justify-content: space-evenly;
     list-style-type: none;
     padding-inline-start: 0;
@@ -58,6 +60,7 @@ nav ul {
 nav ul li {
     display: flex;
     align-items: center;
+    padding: 0 5px;
 }
 
 nav ul li a {
@@ -118,7 +121,6 @@ input[type='submit'] {
     color: var(--text-color);
     text-align: center;
     transition: all .2s;
-
     background-color: transparent;
     margin: 15px;
 }
@@ -148,8 +150,13 @@ section#about img {
 }
 
 /* Overview subsection */
+section#overview-section {
+    margin: 0 auto;
+    display: inline-block;
+    max-width: 70vw;
+}
+
 section#overview-section ul {
-    max-width: 90vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-inline-start: 0;
@@ -162,8 +169,8 @@ section#overview-section ul li {
     border-bottom: 1px solid var(--extra-color);
 }
 
-section#overview-section ul li:nth-child(3n+1):nth-last-child(-n+3),
-section#overview-section ul li:nth-child(3n+1):nth-last-child(-n+3)~li {
+#overview-section ul li:nth-child(3n+1):nth-last-child(-n+3),
+#overview-section ul li:nth-child(3n+1):nth-last-child(-n+3)~li {
     border-bottom: none;
 }
 
@@ -189,21 +196,56 @@ section#info-section img {
     max-width: 50vw;
 }
 
-
-
-/* TODO: remove when code is finished, used for testing */
-/* section#exercise-choices {
-    display: none;
+/* WORKOUT section */
+#workout img {
+    max-width: 100%;
 }
 
-section#about {
-    display: block;
+/* Media queries */
+@media screen and (max-width: 1300px) {
+    #overview-section {
+        max-width: 80vw;
+    }
 }
 
-section#workout {
-    display: none;
+@media screen and (max-width: 500px) {
+
+    #choose-exclusions,
+    #choose-exercise {
+        grid-template-columns: repeat(2, .6fr 1fr);
+    }
+
+    section#overview-section ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #overview-section ul li:nth-child(3n+1):nth-last-child(-n+3),
+    #overview-section ul li:nth-child(3n+1):nth-last-child(-n+3)~li {
+        border-bottom: 1px solid var(--extra-color);
+    }
+
+    section#overview-section ul li:nth-child(2n+1):nth-last-child(-n+2),
+    section#overview-section ul li:nth-child(2n+1):nth-last-child(-n+2)~li {
+        border-bottom: none;
+    }
 }
 
-section#view-previous {
-    display: none;
-} */
+@media screen and (max-width: 300px) {
+
+    #choose-exclusions,
+    #choose-exercise {
+        grid-template-columns: repeat(1, .6fr 1fr);
+    }
+
+    section#overview-section ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    section#overview-section ul li:nth-last-of-type(2) {
+        border-bottom: 1px solid var(--extra-color) !important;
+    }
+
+    section#overview-section ul li:last-child {
+        border-bottom: none !important;
+    }
+}
