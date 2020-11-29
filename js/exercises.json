@@ -128,9 +128,9 @@
 	},
 	"triceps-dip": {
 		"id": 6,
-		"name": "Triceps-dips",
+		"name": "Triceps dips",
 		"path": "triceps-dip.png",
-		"alt": "Illustration of person doing a triceps-dip",
+		"alt": "Illustration of person doing a triceps dip",
 		"time": "standard",
 		"involves": {
 			"legs": false,
@@ -152,7 +152,7 @@
 		"id": 7,
 		"name": "Plank",
 		"path": "plank.png",
-		"alt": "Illustration of person doing a plank exercise",
+		"alt": "Illustration of person doing the plank exercise",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -210,7 +210,7 @@
 		"id": 10,
 		"name": "Push-up and rotate",
 		"path": "push-up-rotate.png",
-		"alt": "Illustration of person doing a push-up and rotate exercise",
+		"alt": "Illustration of person doing the push-up and rotate exercise",
 		"time": "split",
 		"involves": {
 			"legs": false,
