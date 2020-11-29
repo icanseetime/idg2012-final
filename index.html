@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="7-minute workout that can be customized to your needs.">
     <!-- Normalize.css to make sure it displays similarly in most browsers -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -16,9 +17,9 @@
     </header>
     <nav>
         <ul>
-            <li><a id="about-link" href="#about">Read about exercises</a></li>
             <li><a id="exercise-choices-link" href="#exercise-choices">Choose your workout</a></li>
-            <li><a id="view-previous-link" href="#view-previous">View previous workouts</a></li>
+            <li><a id="about-link" href="#about">Read about exercises</a></li>
+            <li><a id="view-previous-link" href="#view-previous">Previous workouts</a></li>
         </ul>
     </nav>
 
@@ -37,10 +38,8 @@
                 <fieldset>
                     <legend>Choose the length of your workout</legend>
                     <label for="minutes">Length of workout in minutes</label>
-                    <!-- TODO: change value to 7 and min to 3, changed for testing purposes -->
-                    <input type="number" id="minutes" value="3" max="60" min="1">
+                    <input type="number" id="minutes" value="7" min="3" max="180">
                 </fieldset>
-
 
                 <!-- Exclusion -->
                 <fieldset id="exclusion">
@@ -83,10 +82,11 @@
         </section>
 
         <!-- The workout -->
-        <section id="workout">
+        <section id="workout" aria-live="polite">
             <h2 id="exercise-header"></h2>
-            <h3 id="countdown"></h3>
-            <img id="exercise-image" src="" alt="">
+            <h3 id="switch-sides"></h3>
+            <h3 id="countdown" aria-live="off"></h3>
+            <img id="exercise-image" aria-live="off" src="" alt="">
         </section>
 
         <!-- View previous workouts -->
