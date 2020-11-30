@@ -28,12 +28,9 @@ fetch('js/exercises.json')
                 exerciseChoicesSection.style.display = "block"
                 workoutSection.style.display = "none"
                 viewPreviousSection.style.display = "none"
-
-                if (!document.querySelector('#exercise-choices')) {
-
-                }
             })
 
+            // DEFAULT STATE
             // Add checkboxes etc to form from JSON-data
             Object.values(data).forEach(exercise => {
                 // Create labels
@@ -122,7 +119,6 @@ fetch('js/exercises.json')
                 let length = document.getElementById('minutes').value * 60
                 let exerciseTimer = Math.floor(length * 0.8675 / numberOfExercises) * 1000
                 let restTimer = Math.floor(length * 0.1325 / (numberOfExercises - 1)) * 1000
-                console.table("Number of exercises:", numberOfExercises, "Total length:", length, "Length of exercise:", exerciseTimer, "Length of break:", restTimer)
 
                 // Hide "Save workout" and "Finish workout"-buttons
                 if (document.getElementById('save-button') || document.getElementById('finish-button')) {
@@ -247,9 +243,11 @@ fetch('js/exercises.json')
 
                 // Exercises
                 function displayExercise(currentExercise, lengthOfExercise) {
-                    // Display relevant information in the workout section
+                    // Make screen readers read out name of exercise and the number of seconds
                     let seconds = lengthOfExercise / 1000
                     document.getElementById('exercise-header').setAttribute('aria-label', `${currentExercise.name}, ${seconds} seconds`)
+
+                    // Display relevant information in the workout section
                     document.getElementById('exercise-header').innerHTML = `${currentExercise.name}`
                     document.getElementById('exercise-image').src = `resources/${currentExercise.path}`
                     document.getElementById('exercise-image').alt = `${currentExercise.alt}`
@@ -272,10 +270,12 @@ fetch('js/exercises.json')
 
                 // Breaks between exercises
                 function displayBreak(lengthOfBreak) {
-                    // Display relevant information in the workout section
                     countdownTimer(lengthOfBreak)
+                    // Make screen readers read out "Take a break" and the number of seconds
                     let seconds = lengthOfBreak / 1000
                     document.getElementById('exercise-header').setAttribute('aria-label', `Take a break, ${seconds} seconds`)
+
+                    // Display relevant information in the workout section
                     document.getElementById('exercise-header').innerHTML = "Take a break"
                     document.getElementById('exercise-image').src = ""
                     document.getElementById('exercise-image').alt = ""
@@ -325,8 +325,6 @@ fetch('js/exercises.json')
 
                 let ul = document.createElement('ul')
                 Object.values(data).forEach(exercise => {
-                    console.log(exercise)
-
                     //List items
                     let li = document.createElement('li')
                     let a = document.createElement('a')
@@ -386,10 +384,11 @@ fetch('js/exercises.json')
                         // Display everything in the about-section
                         aboutSection.appendChild(infoSection)
                     })
-
+                    // Connect list items
                     li.appendChild(a)
                     ul.appendChild(li)
                 })
+                // Append list to browser view
                 overviewSection.appendChild(ul)
                 aboutSection.appendChild(overviewSection)
             }
