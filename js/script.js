@@ -329,6 +329,7 @@ fetch('js/exercises.json')
                     let li = document.createElement('li')
                     let a = document.createElement('a')
                     a.href = ""
+                    a.setAttribute('aria-label', `Read about ${exercise.name}`)
                     a.id = `read-${keys[exercise.id]}`
 
                     // Headings
@@ -339,7 +340,8 @@ fetch('js/exercises.json')
                     // Illustrations
                     illustration = document.createElement('img')
                     illustration.src = `resources/${exercise.path}`
-                    illustration.alt = `Read about ${exercise.name}`
+                    illustration.role = "presentational"
+                    illustration.alt = exercise.alt
                     a.appendChild(illustration)
 
                     a.addEventListener('click', e => {
