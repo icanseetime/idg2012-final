@@ -3,7 +3,7 @@
 		"id": 0,
 		"name": "Jumping jacks",
 		"path": "jumping-jack.png",
-		"alt": "",
+		"alt": "Illustration of person doing jumping jacks",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -23,7 +23,7 @@
 		"id": 1,
 		"name": "Wall sit",
 		"path": "wall-sit.png",
-		"alt": "",
+		"alt": "Illustration of person doing a wall-sit",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -46,7 +46,7 @@
 		"id": 2,
 		"name": "Push-ups",
 		"path": "push-up.png",
-		"alt": "",
+		"alt": "Illustration of person doing a push-up",
 		"time": "standard",
 		"involves": {
 			"legs": false,
@@ -67,7 +67,7 @@
 		"id": 3,
 		"name": "Crunches",
 		"path": "crunch.png",
-		"alt": "",
+		"alt": "Illustration of person doing crunches",
 		"time": "standard",
 		"bodypart": "abdomen",
 		"involves": {
@@ -88,7 +88,7 @@
 		"id": 4,
 		"name": "Step-ups",
 		"path": "step-up.png",
-		"alt": "",
+		"alt": "Illustration of person doing a step-up",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -108,7 +108,7 @@
 		"id": 5,
 		"name": "Squats",
 		"path": "jumping-jack.png",
-		"alt": "",
+		"alt": "Illustration of person doing a squat",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -128,9 +128,9 @@
 	},
 	"triceps-dip": {
 		"id": 6,
-		"name": "Triceps-dips",
+		"name": "Triceps dips",
 		"path": "triceps-dip.png",
-		"alt": "",
+		"alt": "Illustration of person doing a triceps dip",
 		"time": "standard",
 		"involves": {
 			"legs": false,
@@ -152,7 +152,7 @@
 		"id": 7,
 		"name": "Plank",
 		"path": "plank.png",
-		"alt": "",
+		"alt": "Illustration of person doing the plank exercise",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -171,7 +171,7 @@
 		"id": 8,
 		"name": "Running",
 		"path": "running.png",
-		"alt": "",
+		"alt": "Illustration of person running in place",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -190,7 +190,7 @@
 		"id": 9,
 		"name": "Lunges",
 		"path": "lunge.png",
-		"alt": "",
+		"alt": "Illustration of person doing lunges",
 		"time": "standard",
 		"involves": {
 			"legs": true,
@@ -210,7 +210,7 @@
 		"id": 10,
 		"name": "Push-up and rotate",
 		"path": "push-up-rotate.png",
-		"alt": "",
+		"alt": "Illustration of person doing the push-up and rotate exercise",
 		"time": "split",
 		"involves": {
 			"legs": false,
@@ -230,7 +230,7 @@
 		"id": 11,
 		"name": "Side-plank",
 		"path": "side-plank.png",
-		"alt": "",
+		"alt": "Illustration of person doing a side-plank exercise",
 		"time": "split",
 		"involves": {
 			"legs": true,
