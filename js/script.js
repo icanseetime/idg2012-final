@@ -305,6 +305,10 @@ fetch('js/exercises.json')
                     finishButton.id = "finish-button"
                     finishButton.innerHTML = "Finish workout"
                     document.getElementById('workout').appendChild(finishButton)
+
+                    document.getElementById('finish-button').addEventListener('click', e => {
+                        document.getElementById('exercise-choices-link').click()
+                    })
                 }
             })
         }
